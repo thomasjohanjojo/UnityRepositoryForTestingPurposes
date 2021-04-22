@@ -32,10 +32,12 @@ public class PlayerDodge : MonoBehaviour
 
         if(Input.GetKeyDown((KeyCode.LeftShift)) == true)
         {
-            // move player in the facing direction for a distance then stop
-            // save starting point, then calculate distance with current point as absolute value, then stop if distance exceeded
+            transform.Translate(dodgeSpeed * playerFacingDirection * Time.deltaTime, 0f, 0f);
+        }
 
-           // Transform.translate(dodgeSpeed * Time.deltaTime * facing side)
+        else
+        {
+            transform.Translate(0f, 0f, 0f);
         }
     }
 }
