@@ -22,22 +22,36 @@ public class PlayerDodge : MonoBehaviour
         if(gameObject.transform.rotation.y == 0)
         {
             playerFacingDirection = 1; // 1 means right
-            
+
+            if (Input.GetKeyDown((KeyCode.LeftShift)) == true)
+            {
+                transform.Translate(dodgeSpeed * playerFacingDirection * Time.deltaTime, 0f, 0f);
+            }
+
+            else
+            {
+                transform.Translate(0f, 0f, 0f);
+            }
+
         }
          else if(gameObject.transform.rotation.y == -1)
         {
             playerFacingDirection = -1;
-            
+
+            if (Input.GetKeyDown((KeyCode.LeftShift)) == true)
+            {
+                transform.Translate(dodgeSpeed * playerFacingDirection * Time.deltaTime, 0f, 0f);
+            }
+
+            else
+            {
+                transform.Translate(0f, 0f, 0f);
+            }
+
         }
 
-        if(Input.GetKeyDown((KeyCode.LeftShift)) == true)
-        {
-            transform.Translate(dodgeSpeed * playerFacingDirection * Time.deltaTime, 0f, 0f);
-        }
+        
 
-        else
-        {
-            transform.Translate(0f, 0f, 0f);
-        }
+        
     }
 }
