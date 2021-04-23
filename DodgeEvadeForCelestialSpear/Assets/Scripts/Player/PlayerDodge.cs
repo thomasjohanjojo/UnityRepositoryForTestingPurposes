@@ -50,7 +50,11 @@ public class PlayerDodge : MonoBehaviour
 
         if (Input.GetKeyDown((KeyCode.LeftShift)) == true)
         {
+            myRigidbody2D.gravityScale = 0;
+            myBoxCollider2D.enabled = false;
             transform.Translate(dodgeSpeed * Time.deltaTime, 0f, 0f);
+            myBoxCollider2D.enabled = true;
+            myRigidbody2D.gravityScale = 1;
             
         }
 
