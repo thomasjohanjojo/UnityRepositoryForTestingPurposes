@@ -79,5 +79,7 @@ public class PlayerDodge : MonoBehaviour
 
         Vector2 forceToAddWhenDodging = new Vector2(dodgeSpeed * playerFacingDirection, 0f);
         myRigidbody2D.AddForce(forceToAddWhenDodging, ForceMode2D.Impulse);
+
+        Debug.Log("Entered co routine");
     }
 }
