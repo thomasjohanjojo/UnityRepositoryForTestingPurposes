@@ -6,6 +6,7 @@ public class PlayerDodge : MonoBehaviour
 {
 
     public float dodgeSpeed;
+    public float thatMillisecondsOfTimeAfterWhichTheDodgeActuallyHappens;
 
     public Rigidbody2D myRigidbody2D;
     public BoxCollider2D myBoxCollider2D;
@@ -51,9 +52,7 @@ public class PlayerDodge : MonoBehaviour
         if (Input.GetKeyDown((KeyCode.LeftShift)) == true)
         {
             StartCoroutine(waitBeforeDodging());
-            myRigidbody2D.gravityScale = 0;
-            myBoxCollider2D.enabled = false;
-            transform.Translate(dodgeSpeed * Time.deltaTime, 0f, 0f);
+           
             
             
         }
@@ -68,7 +67,15 @@ public class PlayerDodge : MonoBehaviour
 
     IEnumerator waitBeforeDodging()
     {
-        yield return new WaitForSeconds(2f);
-        Debug.Log("entered corounting");
+        yield return new WaitForSeconds(thatMillisecondsOfTimeAfterWhichTheDodgeActuallyHappens);
+        TurnOffColliderAndGravityAndDoTheDodge();
+        
+    }
+
+    void TurnOffColliderAndGravityAndDoTheDodge()
+    {
+        myRigidbody2D.gravityScale = 0;
+        myBoxCollider2D.enabled = false;
+        transform.Translate(dodgeSpeed * Time.deltaTime, 0f, 0f);
     }
 }
