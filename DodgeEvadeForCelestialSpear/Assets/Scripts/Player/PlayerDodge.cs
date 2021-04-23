@@ -25,7 +25,7 @@ public class PlayerDodge : MonoBehaviour
 
             if (Input.GetKeyDown((KeyCode.LeftShift)) == true)
             {
-                transform.Translate(dodgeSpeed * playerFacingDirection * Time.deltaTime, 0f, 0f);
+                transform.Translate(dodgeSpeed * Time.deltaTime, 0f, 0f);
             }
 
             else
@@ -40,7 +40,7 @@ public class PlayerDodge : MonoBehaviour
 
             if (Input.GetKeyDown((KeyCode.LeftShift)) == true)
             {
-                transform.Translate(dodgeSpeed * playerFacingDirection * Time.deltaTime, 0f, 0f);
+                transform.Translate(dodgeSpeed * Time.deltaTime, 0f, 0f);
             }
 
             else
