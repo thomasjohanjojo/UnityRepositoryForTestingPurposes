@@ -76,6 +76,8 @@ public class PlayerDodge : MonoBehaviour
     {
         myRigidbody2D.gravityScale = 0;
         myBoxCollider2D.enabled = false;
-        transform.Translate(dodgeSpeed * Time.deltaTime, 0f, 0f);
+
+        Vector2 forceToAddWhenDodging = new Vector2(dodgeSpeed * playerFacingDirection, 0f);
+        myRigidbody2D.AddForce(forceToAddWhenDodging, ForceMode2D.Impulse);
     }
 }
