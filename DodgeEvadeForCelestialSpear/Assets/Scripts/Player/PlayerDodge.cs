@@ -8,12 +8,14 @@ public class PlayerDodge : MonoBehaviour
     public float dodgeSpeed;
 
     public Rigidbody2D myRigidbody2D;
+    public BoxCollider2D myBoxCollider2D;
 
     public float playerFacingDirection;
     // Start is called before the first frame update
     void Start()
     {
         myRigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+        myBoxCollider2D = gameObject.GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
