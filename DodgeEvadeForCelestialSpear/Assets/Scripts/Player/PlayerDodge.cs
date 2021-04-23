@@ -18,40 +18,40 @@ public class PlayerDodge : MonoBehaviour
     void Update()
     {
 
-        
-        if(gameObject.transform.rotation.y == 0)
+
+        CheckPlayerFacingDirection(); //no use right now
+        DodgeUsingTranslate();
+
+
+
+    }
+
+    void CheckPlayerFacingDirection()
+    {
+        if (gameObject.transform.rotation.y == 0)
         {
             playerFacingDirection = 1; // 1 means right
 
-            if (Input.GetKeyDown((KeyCode.LeftShift)) == true)
-            {
-                transform.Translate(dodgeSpeed * Time.deltaTime, 0f, 0f);
-            }
-
-            else
-            {
-                transform.Translate(0f, 0f, 0f);
-            }
-
         }
-         else if(gameObject.transform.rotation.y == -1)
+        else if (gameObject.transform.rotation.y == -1)
         {
             playerFacingDirection = -1;
 
-            if (Input.GetKeyDown((KeyCode.LeftShift)) == true)
-            {
-                transform.Translate(dodgeSpeed * Time.deltaTime, 0f, 0f);
-            }
+        }
+    }
 
-            else
-            {
-                transform.Translate(0f, 0f, 0f);
-            }
 
+    void DodgeUsingTranslate()
+    {
+
+        if (Input.GetKeyDown((KeyCode.LeftShift)) == true)
+        {
+            transform.Translate(dodgeSpeed * Time.deltaTime, 0f, 0f);
         }
 
-        
-
-        
+        else
+        {
+            transform.Translate(0f, 0f, 0f);
+        }
     }
 }
