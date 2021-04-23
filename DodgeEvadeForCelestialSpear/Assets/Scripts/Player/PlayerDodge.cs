@@ -7,11 +7,13 @@ public class PlayerDodge : MonoBehaviour
 
     public float dodgeSpeed;
 
+    public Rigidbody2D myRigidbody2D;
+
     public float playerFacingDirection;
     // Start is called before the first frame update
     void Start()
     {
-        
+        myRigidbody2D = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -47,6 +49,7 @@ public class PlayerDodge : MonoBehaviour
         if (Input.GetKeyDown((KeyCode.LeftShift)) == true)
         {
             transform.Translate(dodgeSpeed * Time.deltaTime, 0f, 0f);
+            
         }
 
         else
