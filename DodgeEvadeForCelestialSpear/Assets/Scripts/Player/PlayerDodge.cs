@@ -53,14 +53,15 @@ public class PlayerDodge : MonoBehaviour
             myRigidbody2D.gravityScale = 0;
             myBoxCollider2D.enabled = false;
             transform.Translate(dodgeSpeed * Time.deltaTime, 0f, 0f);
-            myBoxCollider2D.enabled = true;
-            myRigidbody2D.gravityScale = 1;
+            
             
         }
 
         else
         {
             transform.Translate(0f, 0f, 0f);
+            myBoxCollider2D.enabled = true;
+            myRigidbody2D.gravityScale = 1;
         }
     }
 }
