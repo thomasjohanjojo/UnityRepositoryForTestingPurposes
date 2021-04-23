@@ -52,8 +52,7 @@ public class PlayerDodge : MonoBehaviour
         if (Input.GetKeyDown((KeyCode.LeftShift)) == true)
         {
             StartCoroutine(waitBeforeDodging());
-           
-            
+                
             
         }
 
