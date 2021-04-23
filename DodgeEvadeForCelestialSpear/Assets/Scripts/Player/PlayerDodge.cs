@@ -50,6 +50,7 @@ public class PlayerDodge : MonoBehaviour
 
         if (Input.GetKeyDown((KeyCode.LeftShift)) == true)
         {
+            StartCoroutine(waitBeforeDodging());
             myRigidbody2D.gravityScale = 0;
             myBoxCollider2D.enabled = false;
             transform.Translate(dodgeSpeed * Time.deltaTime, 0f, 0f);
@@ -63,5 +64,10 @@ public class PlayerDodge : MonoBehaviour
             myBoxCollider2D.enabled = true;
             myRigidbody2D.gravityScale = 1;
         }
+    }
+
+    IEnumerator waitBeforeDodging()
+    {
+        yield return new WaitForSeconds(2f);
     }
 }
