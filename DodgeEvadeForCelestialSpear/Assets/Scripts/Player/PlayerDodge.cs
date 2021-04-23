@@ -69,5 +69,6 @@ public class PlayerDodge : MonoBehaviour
     IEnumerator waitBeforeDodging()
     {
         yield return new WaitForSeconds(2f);
+        Debug.Log("entered corounting");
     }
 }
