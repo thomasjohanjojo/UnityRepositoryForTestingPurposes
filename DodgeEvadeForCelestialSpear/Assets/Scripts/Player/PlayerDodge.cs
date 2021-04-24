@@ -7,6 +7,7 @@ public class PlayerDodge : MonoBehaviour
 
     public float dodgeSpeed;
     public float thatMillisecondsOfTimeAfterWhichTheDodgeActuallyHappens;
+    public float theDurationOfTheDodge;
 
     public Rigidbody2D myRigidbody2D;
     public BoxCollider2D myBoxCollider2D;
@@ -19,6 +20,7 @@ public class PlayerDodge : MonoBehaviour
     {
         myRigidbody2D = gameObject.GetComponent<Rigidbody2D>();
         myBoxCollider2D = gameObject.GetComponent<BoxCollider2D>();
+        DoTheDodge = false;
     }
 
     // Update is called once per frame
@@ -26,8 +28,9 @@ public class PlayerDodge : MonoBehaviour
     {
 
 
-        CheckPlayerFacingDirection(); //no use right now
-        DodgeUsingTranslate();
+        CheckPlayerFacingDirection(); 
+        DetectWhenShiftButtonIsPressedThenStartTheTimerAndAlsoStopItAfterSomeTimeByTurningTheBooleanOnAndOff();
+        TurnOffColliderAndGravityAndDoTheDodgeWheneverTheBooleanIsTrueAndDoTheOppositeWhenItIsFalse();
 
 
 
@@ -48,7 +51,7 @@ public class PlayerDodge : MonoBehaviour
     }
 
 
-    void DodgeUsingTranslate()
+    void DetectWhenShiftButtonIsPressedThenStartTheTimerAndAlsoStopItAfterSomeTimeByTurningTheBooleanOnAndOff()
     {
 
         if (Input.GetKeyDown((KeyCode.LeftShift)) == true)
@@ -58,29 +61,35 @@ public class PlayerDodge : MonoBehaviour
             
         }
 
-        else
-        {
-            transform.Translate(0f, 0f, 0f);
-            myBoxCollider2D.enabled = true;
-            myRigidbody2D.gravityScale = 1;
-        }
+       
     }
 
     IEnumerator waitBeforeDodging()
     {
         yield return new WaitForSeconds(thatMillisecondsOfTimeAfterWhichTheDodgeActuallyHappens);
-        TurnOffColliderAndGravityAndDoTheDodge();
+        DoTheDodge = true;
+        yield return new WaitForSeconds(theDurationOfTheDodge);
+        DoTheDodge = false;
         
     }
 
-    void TurnOffColliderAndGravityAndDoTheDodge()
+    void TurnOffColliderAndGravityAndDoTheDodgeWheneverTheBooleanIsTrueAndDoTheOppositeWhenItIsFalse()
     {
-        myRigidbody2D.gravityScale = 0;
-        myBoxCollider2D.enabled = false;
+        if (DoTheDodge == true)
+        {
+            myRigidbody2D.gravityScale = 0;
+            myBoxCollider2D.enabled = false;
 
-        Vector2 forceToAddWhenDodging = new Vector2(dodgeSpeed * playerFacingDirection, 0f);
-        myRigidbody2D.AddForce(forceToAddWhenDodging, ForceMode2D.Force);
+            Vector2 forceToAddWhenDodging = new Vector2(dodgeSpeed * playerFacingDirection, 0f);
+            myRigidbody2D.AddForce(forceToAddWhenDodging, ForceMode2D.Force);
 
-        Debug.Log("Entered co routine");
+            
+        }
+
+        if(DoTheDodge == false)
+        {
+            myBoxCollider2D.enabled = true;
+            myRigidbody2D.gravityScale = 1;
+        }
     }
 }
