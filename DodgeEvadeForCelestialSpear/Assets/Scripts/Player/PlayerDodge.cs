@@ -70,6 +70,7 @@ public class PlayerDodge : MonoBehaviour
         DoTheDodge = true;
         yield return new WaitForSeconds(theDurationOfTheDodge);
         DoTheDodge = false;
+        FlipThePlayerToTheOppositeFacingSideAfterDodging();
         
     }
 
