@@ -77,7 +77,7 @@ public class PlayerDodge : MonoBehaviour
         myBoxCollider2D.enabled = false;
 
         Vector2 forceToAddWhenDodging = new Vector2(dodgeSpeed * playerFacingDirection, 0f);
-        myRigidbody2D.AddForce(forceToAddWhenDodging, ForceMode2D.Impulse);
+        myRigidbody2D.AddForce(forceToAddWhenDodging, ForceMode2D.Force);
 
         Debug.Log("Entered co routine");
     }
