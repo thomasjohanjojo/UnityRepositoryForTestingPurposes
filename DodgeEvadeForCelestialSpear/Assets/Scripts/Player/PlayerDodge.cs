@@ -92,4 +92,20 @@ public class PlayerDodge : MonoBehaviour
             myRigidbody2D.gravityScale = 1;
         }
     }
+
+
+    void FlipThePlayerToTheOppositeFacingSideAfterDodging()
+    {
+        if (playerFacingDirection == -1)
+        {
+            gameObject.transform.rotation = Quaternion.Euler(transform.rotation.x, 0f, transform.rotation.z);
+
+        }
+
+        else 
+        {
+            gameObject.transform.rotation = Quaternion.Euler(transform.rotation.x, 180f, transform.rotation.z);
+
+        }
+    }
 }
