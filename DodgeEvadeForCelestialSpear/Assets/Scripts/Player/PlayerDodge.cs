@@ -11,6 +11,8 @@ public class PlayerDodge : MonoBehaviour
     public Rigidbody2D myRigidbody2D;
     public BoxCollider2D myBoxCollider2D;
 
+    public bool DoTheDodge;
+
     public float playerFacingDirection;
     // Start is called before the first frame update
     void Start()
