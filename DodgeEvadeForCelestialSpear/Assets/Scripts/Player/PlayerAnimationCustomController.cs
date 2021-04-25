@@ -11,6 +11,11 @@ public class PlayerAnimationCustomController : MonoBehaviour
     public Animator myAnimator;
 
     public string currentState;
+
+    public const string IDLE = "Idle";
+    public const string RUNNING = "Running";
+    public const string HOLDBEFOREDODGE = "HoldBeforeDodge";
+    public const string DODGE = "Dodge";
     
     // Start is called before the first frame update
     void Start()
@@ -23,7 +28,7 @@ public class PlayerAnimationCustomController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        animationTransitionLogicControllerFunction();
     }
 
     void ChangeAnimationState(string newState)
@@ -40,5 +45,18 @@ public class PlayerAnimationCustomController : MonoBehaviour
             currentState = newState;
         }
 
+    }
+
+   void animationTransitionLogicControllerFunction()
+    {
+        if(playerMovementScriptReference.isMoving == true)
+        {
+            ChangeAnimationState(RUNNING);
+        }
+
+        if(playerMovementScriptReference.isMoving == false)
+        {
+            ChangeAnimationState(IDLE);
+        }
     }
 }
