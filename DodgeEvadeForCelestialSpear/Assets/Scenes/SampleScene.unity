@@ -206,30 +206,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &654717958 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4701292361353750199, guid: 13c72f330b2ab0443a6e96d4999a9376, type: 3}
-  m_PrefabInstance: {fileID: 1155091003708620484}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &654717965
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654717958}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e43a7ab04f6f3644c8ed9d3bca069231, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1155091003708620484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -279,22 +255,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 970782462259956041, guid: 13c72f330b2ab0443a6e96d4999a9376, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3197437591360980724, guid: 13c72f330b2ab0443a6e96d4999a9376, type: 3}
-      propertyPath: dodgeSpeed
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 3197437591360980724, guid: 13c72f330b2ab0443a6e96d4999a9376, type: 3}
-      propertyPath: theDurationOfTheDodge
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3197437591360980724, guid: 13c72f330b2ab0443a6e96d4999a9376, type: 3}
-      propertyPath: thatMillisecondsOfTimeAfterWhichTheDodgeActuallyHappens
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3835368340862540913, guid: 13c72f330b2ab0443a6e96d4999a9376, type: 3}
-      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4701292361353750199, guid: 13c72f330b2ab0443a6e96d4999a9376, type: 3}

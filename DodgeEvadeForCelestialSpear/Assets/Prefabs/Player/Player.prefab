@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3835368340862540913}
   - component: {fileID: 185697546}
   - component: {fileID: 3197437591360980724}
+  - component: {fileID: 654717965}
+  - component: {fileID: 654717959}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -158,5 +160,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40d77caaadc969340983b2fbc2ecb37a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dodgeSpeed: 60
+  thatMillisecondsOfTimeAfterWhichTheDodgeActuallyHappens: 0.2
+  theDurationOfTheDodge: 0.2
+  myRigidbody2D: {fileID: 0}
+  myBoxCollider2D: {fileID: 0}
+  DoTheDodge: 0
+  playerFacingDirection: 0
+--- !u!95 &654717965
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4701292361353750199}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e43a7ab04f6f3644c8ed9d3bca069231, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &654717959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4701292361353750199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc11913a8aaa7aa4c8007536d5d04f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
