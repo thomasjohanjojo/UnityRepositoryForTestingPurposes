@@ -49,14 +49,26 @@ public class PlayerAnimationCustomController : MonoBehaviour
 
    void animationTransitionLogicControllerFunction()
     {
-        if(playerMovementScriptReference.isMoving == true)
+        if(playerMovementScriptReference.isMoving == true && playerMovementScriptReference.playerHorizontalInputValue != 0f)
         {
             ChangeAnimationState(RUNNING);
         }
 
-        if(playerMovementScriptReference.isMoving == false)
+        if(playerDodgeScriptReference.HoldBeforeTheDodge == true)
+        {
+            ChangeAnimationState(HOLDBEFOREDODGE);
+        }
+
+        else if (playerDodgeScriptReference.DoTheDodge == true)
+        {
+            ChangeAnimationState(DODGE);
+        }
+
+        else if(playerMovementScriptReference.isMoving == false) // here idle has the potential to override hold before dodge and dodge therefore it is kept as an else if AFTER the other two
         {
             ChangeAnimationState(IDLE);
         }
+
+        
     }
 }

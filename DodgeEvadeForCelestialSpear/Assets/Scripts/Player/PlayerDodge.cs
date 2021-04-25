@@ -12,6 +12,7 @@ public class PlayerDodge : MonoBehaviour
     public Rigidbody2D myRigidbody2D;
     public BoxCollider2D myBoxCollider2D;
 
+    public bool HoldBeforeTheDodge;
     public bool DoTheDodge;
 
     public float playerFacingDirection;
@@ -66,7 +67,9 @@ public class PlayerDodge : MonoBehaviour
 
     IEnumerator waitBeforeDodging()
     {
+        HoldBeforeTheDodge = true;
         yield return new WaitForSeconds(thatMillisecondsOfTimeAfterWhichTheDodgeActuallyHappens);
+        HoldBeforeTheDodge = false;
         DoTheDodge = true;
         yield return new WaitForSeconds(theDurationOfTheDodge);
         DoTheDodge = false;

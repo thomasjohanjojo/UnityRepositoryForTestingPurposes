@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed;
     public bool canMove;
     public bool isMoving;
-    private float playerHorizontalInputValue;
+    public float playerHorizontalInputValue;
 
     Rigidbody2D maincharacterRigidbody;
 
